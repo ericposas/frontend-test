@@ -23,6 +23,7 @@
     "express-session": "^1.17.0",
     "html-entities": "^1.2.1",
     "mongoose": "^5.8.6",
+    "month-days": "^3.0.0",
     "morgan": "~1.9.0",
     "multer": "^1.4.2",
     "react": "^16.10.1",

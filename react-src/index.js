@@ -7,6 +7,11 @@ import 'react-toastify/dist/ReactToastify.css'
 import rootReducer from './reducers/rootReducer'
 import App from './components/App'
 import './index.scss'
+// import all images/graphics
+const requireImage = require.context('./graphics', false, /.(svg|jpg|png)$/)
+requireImage.keys().forEach(image => {
+  requireImage(image)
+})
 
 const rootElement = document.getElementById('root')
 const store = createStore(rootReducer, applyMiddleware(thunk))

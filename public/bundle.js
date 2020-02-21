@@ -3918,7 +3918,7 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./react-src/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"html,\\nbody {\\n  margin: 0; }\\n\\n.banner-my-company {\\n  text-align: center;\\n  padding: 10px; }\\n\\n.banner-register {\\n  text-align: center;\\n  height: 179px;\\n  line-height: 179px;\\n  font-size: 60px;\\n  font-family: 'Arial';\\n  font-weight: bold;\\n  background-color: lightblue;\\n  color: white; }\\n\\n.center-content {\\n  margin: auto;\\n  position: absolute;\\n  right: 0;\\n  left: 0;\\n  width: 556px;\\n  border: 1px solid #999;\\n  padding: 60px 20px 20px 20px; }\\n\\n.birthdate-selector-container {\\n  padding-top: 10px; }\\n\\n.birthdate-day-selector-container,\\n.birthdate-year-selector-container,\\n.birthdate-month-selector-container {\\n  display: inline; }\\n\\n.birthdate-day-selector-container,\\n.birthdate-year-selector-container,\\n.birthdate-month-selector-container {\\n  position: relative; }\\n\\n.birthdate-day-selector,\\n.birthdate-year-selector,\\n.birthdate-month-selector {\\n  opacity: .01;\\n  top: 0;\\n  position: absolute;\\n  width: 164px; }\\n\\n.birthdate-day-selector {\\n  margin-left: 184px; }\\n\\n.birthdate-year-selector {\\n  margin-left: 368px; }\\n\\n.fake-dropdown-button, .fake-dropdown-button-month, .fake-dropdown-button-day, .fake-dropdown-button-year {\\n  top: 0;\\n  position: absolute;\\n  background-color: #ccc;\\n  pointer-events: none;\\n  width: 164px; }\\n\\n.fake-dropdown-button-day {\\n  left: 184px; }\\n\\n.fake-dropdown-button-year {\\n  left: 368px; }\\n\\n.fake-dropdown-button-text {\\n  display: inline; }\\n\\n.dropdown-arrow {\\n  display: inline;\\n  margin-left: 4px; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./react-src/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -3979,6 +3979,18 @@ eval("\n\nvar reactIs = __webpack_require__(/*! react-is */ \"./node_modules/rea
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ \"./node_modules/@babel/runtime/helpers/inheritsLoose.js\");\n/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var gud__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gud */ \"./node_modules/gud/index.js\");\n/* harmony import */ var gud__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(gud__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tiny-warning */ \"./node_modules/tiny-warning/dist/tiny-warning.esm.js\");\n\n\n\n\n\n\nvar MAX_SIGNED_31_BIT_INT = 1073741823;\n\nfunction objectIs(x, y) {\n  if (x === y) {\n    return x !== 0 || 1 / x === 1 / y;\n  } else {\n    return x !== x && y !== y;\n  }\n}\n\nfunction createEventEmitter(value) {\n  var handlers = [];\n  return {\n    on: function on(handler) {\n      handlers.push(handler);\n    },\n    off: function off(handler) {\n      handlers = handlers.filter(function (h) {\n        return h !== handler;\n      });\n    },\n    get: function get() {\n      return value;\n    },\n    set: function set(newValue, changedBits) {\n      value = newValue;\n      handlers.forEach(function (handler) {\n        return handler(value, changedBits);\n      });\n    }\n  };\n}\n\nfunction onlyChild(children) {\n  return Array.isArray(children) ? children[0] : children;\n}\n\nfunction createReactContext(defaultValue, calculateChangedBits) {\n  var _Provider$childContex, _Consumer$contextType;\n\n  var contextProp = '__create-react-context-' + gud__WEBPACK_IMPORTED_MODULE_3___default()() + '__';\n\n  var Provider =\n  /*#__PURE__*/\n  function (_Component) {\n    _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default()(Provider, _Component);\n\n    function Provider() {\n      var _this;\n\n      _this = _Component.apply(this, arguments) || this;\n      _this.emitter = createEventEmitter(_this.props.value);\n      return _this;\n    }\n\n    var _proto = Provider.prototype;\n\n    _proto.getChildContext = function getChildContext() {\n      var _ref;\n\n      return _ref = {}, _ref[contextProp] = this.emitter, _ref;\n    };\n\n    _proto.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {\n      if (this.props.value !== nextProps.value) {\n        var oldValue = this.props.value;\n        var newValue = nextProps.value;\n        var changedBits;\n\n        if (objectIs(oldValue, newValue)) {\n          changedBits = 0;\n        } else {\n          changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;\n\n          if (true) {\n            Object(tiny_warning__WEBPACK_IMPORTED_MODULE_4__[\"default\"])((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: ' + changedBits);\n          }\n\n          changedBits |= 0;\n\n          if (changedBits !== 0) {\n            this.emitter.set(nextProps.value, changedBits);\n          }\n        }\n      }\n    };\n\n    _proto.render = function render() {\n      return this.props.children;\n    };\n\n    return Provider;\n  }(react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"]);\n\n  Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired, _Provider$childContex);\n\n  var Consumer =\n  /*#__PURE__*/\n  function (_Component2) {\n    _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default()(Consumer, _Component2);\n\n    function Consumer() {\n      var _this2;\n\n      _this2 = _Component2.apply(this, arguments) || this;\n      _this2.state = {\n        value: _this2.getValue()\n      };\n\n      _this2.onUpdate = function (newValue, changedBits) {\n        var observedBits = _this2.observedBits | 0;\n\n        if ((observedBits & changedBits) !== 0) {\n          _this2.setState({\n            value: _this2.getValue()\n          });\n        }\n      };\n\n      return _this2;\n    }\n\n    var _proto2 = Consumer.prototype;\n\n    _proto2.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {\n      var observedBits = nextProps.observedBits;\n      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;\n    };\n\n    _proto2.componentDidMount = function componentDidMount() {\n      if (this.context[contextProp]) {\n        this.context[contextProp].on(this.onUpdate);\n      }\n\n      var observedBits = this.props.observedBits;\n      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;\n    };\n\n    _proto2.componentWillUnmount = function componentWillUnmount() {\n      if (this.context[contextProp]) {\n        this.context[contextProp].off(this.onUpdate);\n      }\n    };\n\n    _proto2.getValue = function getValue() {\n      if (this.context[contextProp]) {\n        return this.context[contextProp].get();\n      } else {\n        return defaultValue;\n      }\n    };\n\n    _proto2.render = function render() {\n      return onlyChild(this.props.children)(this.state.value);\n    };\n\n    return Consumer;\n  }(react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"]);\n\n  Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object, _Consumer$contextType);\n  return {\n    Provider: Provider,\n    Consumer: Consumer\n  };\n}\n\nvar index = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext || createReactContext;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (index);\n\n\n//# sourceURL=webpack:///./node_modules/mini-create-react-context/dist/esm/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/month-days/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/month-days/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nconst isDefined = value => value !== undefined;\n\nmodule.exports = ({month, year} = {}) => {\n\tif (isDefined(month) && typeof month !== 'number') {\n\t\tthrow new TypeError(`Expected \\`month\\` to be of type \\`number\\`, got \\`${typeof month}\\``);\n\t}\n\n\tif (isDefined(year) && typeof year !== 'number') {\n\t\tthrow new TypeError(`Expected \\`year\\` to be of type \\`number\\`, got \\`${typeof year}\\``);\n\t}\n\n\tconst now = new Date();\n\tmonth = isDefined(month) ? month : now.getUTCMonth();\n\tyear = isDefined(year) ? year : now.getUTCFullYear();\n\n\treturn new Date(Date.UTC(year, month + 1, 0)).getUTCDate();\n};\n\n\n//# sourceURL=webpack:///./node_modules/month-days/index.js?");
 
 /***/ }),
 
@@ -4666,7 +4678,898 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\n\n\nvar Registration =\n/*#__PURE__*/\nfunction (_Component) {\n  _inherits(Registration, _Component);\n\n  function Registration() {\n    var _getPrototypeOf2;\n\n    var _this;\n\n    _classCallCheck(this, Registration);\n\n    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {\n      args[_key] = arguments[_key];\n    }\n\n    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Registration)).call.apply(_getPrototypeOf2, [this].concat(args)));\n\n    _defineProperty(_assertThisInitialized(_this), \"state\", {\n      firstName: '',\n      lastName: '',\n      email: '',\n      password: '',\n      passwordConfirm: ''\n    });\n\n    _defineProperty(_assertThisInitialized(_this), \"handleChange\", function (type) {\n      return function (e) {\n        _this.setState(_defineProperty({}, type, e.target.value));\n      };\n    });\n\n    return _this;\n  }\n\n  _createClass(Registration, [{\n    key: \"render\",\n    value: function render() {\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"banner-my-company\"\n      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"banner-register\"\n      }, \"REGISTER\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Enter your information below for exclusive offers, promotions and savings.\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"form-block\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\"), \" Fields required\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"First Name \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.firstName,\n        onChange: this.handleChange('firstName')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Last Name\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.lastName,\n        onChange: this.handleChange('lastName')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Email Address \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.email,\n        onChange: this.handleChange('email')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Choose Password \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.password,\n        onChange: this.handleChange('password')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Confirm Password \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.passwordConfirm,\n        onChange: this.handleChange('passwordConfirm')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Birthdate \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"select\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"option\", null))))));\n    }\n  }]);\n\n  return Registration;\n}(react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"]);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Registration);\n\n//# sourceURL=webpack:///./react-src/components/Login.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n/* harmony import */ var month_days__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! month-days */ \"./node_modules/month-days/index.js\");\n/* harmony import */ var month_days__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(month_days__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\n\n\n\nvar Registration =\n/*#__PURE__*/\nfunction (_Component) {\n  _inherits(Registration, _Component);\n\n  function Registration() {\n    var _getPrototypeOf2;\n\n    var _this;\n\n    _classCallCheck(this, Registration);\n\n    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {\n      args[_key] = arguments[_key];\n    }\n\n    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Registration)).call.apply(_getPrototypeOf2, [this].concat(args)));\n\n    _defineProperty(_assertThisInitialized(_this), \"state\", {\n      firstName: '',\n      lastName: '',\n      email: '',\n      password: '',\n      passwordConfirm: '',\n      selectedMonth: 1,\n      selectedDay: null,\n      selectedYear: null\n    });\n\n    _defineProperty(_assertThisInitialized(_this), \"handleChange\", function (type) {\n      return function (e) {\n        _this.setState(_defineProperty({}, type, e.target.value));\n      };\n    });\n\n    return _this;\n  }\n\n  _createClass(Registration, [{\n    key: \"render\",\n    value: function render() {\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"banner-my-company\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n        src: \"./img/logo-desktop.svg\",\n        width: 182\n      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"banner-register\"\n      }, \"REGISTER\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"center-content\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Enter your information below for exclusive offers, promotions and savings.\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"form-block\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\"), \" Fields required\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"First Name \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.firstName,\n        onChange: this.handleChange('firstName')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Last Name\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.lastName,\n        onChange: this.handleChange('lastName')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Email Address \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.email,\n        onChange: this.handleChange('email')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Choose Password \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.password,\n        onChange: this.handleChange('password')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Confirm Password \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n        type: \"text\",\n        value: this.state.passwordConfirm,\n        onChange: this.handleChange('passwordConfirm')\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", null, \"Birthdate \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"sup\", null, \"*\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"birthdate-selector-container\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"birthdate-month-selector-container\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"fake-dropdown-button-month\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"fake-dropdown-button-text\"\n      }, \"Month\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n        className: \"dropdown-arrow\",\n        src: \"./img/dropdown-arrow-desktop.png\"\n      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"select\", {\n        className: \"birthdate-month-selector\",\n        onChange: this.handleChange('selectedMonth')\n      }, Array(12).fill(12).map(function (option, i) {\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"option\", {\n          key: \"month-\".concat(i),\n          value: i\n        }, i + 1);\n      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"birthdate-day-selector-container\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"fake-dropdown-button-day\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"fake-dropdown-button-text\"\n      }, \"Day\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n        className: \"dropdown-arrow\",\n        src: \"./img/dropdown-arrow-desktop.png\"\n      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"select\", {\n        className: \"birthdate-day-selector\",\n        onChange: this.handleChange('selectedDay')\n      }, Array(month_days__WEBPACK_IMPORTED_MODULE_2___default()({\n        month: parseInt(this.state.selectedMonth),\n        year: 2020\n      }) || 0).fill(month_days__WEBPACK_IMPORTED_MODULE_2___default()({\n        month: parseInt(this.state.selectedMonth),\n        year: 2020\n      }) || 0).map(function (option, i) {\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"option\", {\n          key: \"day-\".concat(i),\n          value: option - i\n        }, option - i);\n      }).reverse())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"birthdate-year-selector-container\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"fake-dropdown-button-year\"\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        className: \"fake-dropdown-button-text\"\n      }, \"Year\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n        className: \"dropdown-arrow\",\n        src: \"./img/dropdown-arrow-desktop.png\"\n      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"select\", {\n        className: \"birthdate-year-selector\",\n        onChange: this.handleChange('selectedYear')\n      }, Array(121).fill(1900).map(function (year, i) {\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"option\", {\n          key: \"year-\".concat(i),\n          value: year + i\n        }, year + i);\n      }))))))));\n    }\n  }]);\n\n  return Registration;\n}(react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"]);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Registration);\n\n//# sourceURL=webpack:///./react-src/components/Login.js?");
+
+/***/ }),
+
+/***/ "./react-src/graphics sync .(svg|jpg|png)$":
+/*!**************************************************************!*\
+  !*** ./react-src/graphics sync nonrecursive .(svg|jpg|png)$ ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./checkbox-checked-desktop.png\": \"./react-src/graphics/checkbox-checked-desktop.png\",\n\t\"./checkbox-checked-desktop.svg\": \"./react-src/graphics/checkbox-checked-desktop.svg\",\n\t\"./checkbox-checked-desktop@2x.png\": \"./react-src/graphics/checkbox-checked-desktop@2x.png\",\n\t\"./checkbox-checked-desktop@3x.png\": \"./react-src/graphics/checkbox-checked-desktop@3x.png\",\n\t\"./checkbox-checked-mobile.png\": \"./react-src/graphics/checkbox-checked-mobile.png\",\n\t\"./checkbox-checked-mobile.svg\": \"./react-src/graphics/checkbox-checked-mobile.svg\",\n\t\"./checkbox-checked-mobile2@3x.png\": \"./react-src/graphics/checkbox-checked-mobile2@3x.png\",\n\t\"./checkbox-checked-mobile@2x.png\": \"./react-src/graphics/checkbox-checked-mobile@2x.png\",\n\t\"./checkbox-unchecked-desktop.png\": \"./react-src/graphics/checkbox-unchecked-desktop.png\",\n\t\"./checkbox-unchecked-desktop.svg\": \"./react-src/graphics/checkbox-unchecked-desktop.svg\",\n\t\"./checkbox-unchecked-desktop@2x.png\": \"./react-src/graphics/checkbox-unchecked-desktop@2x.png\",\n\t\"./checkbox-unchecked-desktop@3x.png\": \"./react-src/graphics/checkbox-unchecked-desktop@3x.png\",\n\t\"./checkbox-unchecked-error-desktop.png\": \"./react-src/graphics/checkbox-unchecked-error-desktop.png\",\n\t\"./checkbox-unchecked-error-desktop.svg\": \"./react-src/graphics/checkbox-unchecked-error-desktop.svg\",\n\t\"./checkbox-unchecked-error-desktop@2x.png\": \"./react-src/graphics/checkbox-unchecked-error-desktop@2x.png\",\n\t\"./checkbox-unchecked-error-desktop@3x.png\": \"./react-src/graphics/checkbox-unchecked-error-desktop@3x.png\",\n\t\"./checkbox-unchecked-error-mobile.png\": \"./react-src/graphics/checkbox-unchecked-error-mobile.png\",\n\t\"./checkbox-unchecked-error-mobile.svg\": \"./react-src/graphics/checkbox-unchecked-error-mobile.svg\",\n\t\"./checkbox-unchecked-error-mobile@2x.png\": \"./react-src/graphics/checkbox-unchecked-error-mobile@2x.png\",\n\t\"./checkbox-unchecked-error-mobile@3x.png\": \"./react-src/graphics/checkbox-unchecked-error-mobile@3x.png\",\n\t\"./checkbox-unchecked-mobile.png\": \"./react-src/graphics/checkbox-unchecked-mobile.png\",\n\t\"./checkbox-unchecked-mobile@2x.png\": \"./react-src/graphics/checkbox-unchecked-mobile@2x.png\",\n\t\"./checkbox-unchecked-mobile@3x.png\": \"./react-src/graphics/checkbox-unchecked-mobile@3x.png\",\n\t\"./dropdown-arrow-desktop.png\": \"./react-src/graphics/dropdown-arrow-desktop.png\",\n\t\"./dropdown-arrow-desktop.svg\": \"./react-src/graphics/dropdown-arrow-desktop.svg\",\n\t\"./dropdown-arrow-desktop@2x.png\": \"./react-src/graphics/dropdown-arrow-desktop@2x.png\",\n\t\"./dropdown-arrow-desktop@3x.png\": \"./react-src/graphics/dropdown-arrow-desktop@3x.png\",\n\t\"./dropdown-arrow-error-desktop.png\": \"./react-src/graphics/dropdown-arrow-error-desktop.png\",\n\t\"./dropdown-arrow-error-desktop.svg\": \"./react-src/graphics/dropdown-arrow-error-desktop.svg\",\n\t\"./dropdown-arrow-error-desktop@2x.png\": \"./react-src/graphics/dropdown-arrow-error-desktop@2x.png\",\n\t\"./dropdown-arrow-error-desktop@3x.png\": \"./react-src/graphics/dropdown-arrow-error-desktop@3x.png\",\n\t\"./dropdown-arrow-error-mobile.png\": \"./react-src/graphics/dropdown-arrow-error-mobile.png\",\n\t\"./dropdown-arrow-error-mobile.svg\": \"./react-src/graphics/dropdown-arrow-error-mobile.svg\",\n\t\"./dropdown-arrow-error-mobile@2x.png\": \"./react-src/graphics/dropdown-arrow-error-mobile@2x.png\",\n\t\"./dropdown-arrow-error-mobile@3x.png\": \"./react-src/graphics/dropdown-arrow-error-mobile@3x.png\",\n\t\"./dropdown-arrow-mobile.png\": \"./react-src/graphics/dropdown-arrow-mobile.png\",\n\t\"./dropdown-arrow-mobile.svg\": \"./react-src/graphics/dropdown-arrow-mobile.svg\",\n\t\"./dropdown-arrow-mobile@2x.png\": \"./react-src/graphics/dropdown-arrow-mobile@2x.png\",\n\t\"./dropdown-arrow-mobile@3x.png\": \"./react-src/graphics/dropdown-arrow-mobile@3x.png\",\n\t\"./ic-canada-desktop.jpg\": \"./react-src/graphics/ic-canada-desktop.jpg\",\n\t\"./ic-canada-desktop@2x.jpg\": \"./react-src/graphics/ic-canada-desktop@2x.jpg\",\n\t\"./ic-canada-desktop@3x.jpg\": \"./react-src/graphics/ic-canada-desktop@3x.jpg\",\n\t\"./ic-canada-mobile.jpg\": \"./react-src/graphics/ic-canada-mobile.jpg\",\n\t\"./ic-canada-mobile@2x.jpg\": \"./react-src/graphics/ic-canada-mobile@2x.jpg\",\n\t\"./ic-canada-mobile@3x.jpg\": \"./react-src/graphics/ic-canada-mobile@3x.jpg\",\n\t\"./ic-usa-desktop.jpg\": \"./react-src/graphics/ic-usa-desktop.jpg\",\n\t\"./ic-usa-desktop@2x.jpg\": \"./react-src/graphics/ic-usa-desktop@2x.jpg\",\n\t\"./ic-usa-desktop@3x.jpg\": \"./react-src/graphics/ic-usa-desktop@3x.jpg\",\n\t\"./ic-usa-mobile.jpg\": \"./react-src/graphics/ic-usa-mobile.jpg\",\n\t\"./ic-usa-mobile@2x.jpg\": \"./react-src/graphics/ic-usa-mobile@2x.jpg\",\n\t\"./ic-usa-mobile@3x.jpg\": \"./react-src/graphics/ic-usa-mobile@3x.jpg\",\n\t\"./ico-help-desktop.png\": \"./react-src/graphics/ico-help-desktop.png\",\n\t\"./ico-help-desktop@2x.png\": \"./react-src/graphics/ico-help-desktop@2x.png\",\n\t\"./ico-help-desktop@3x.png\": \"./react-src/graphics/ico-help-desktop@3x.png\",\n\t\"./ico-help-mobile.png\": \"./react-src/graphics/ico-help-mobile.png\",\n\t\"./ico-help-mobile@2x.png\": \"./react-src/graphics/ico-help-mobile@2x.png\",\n\t\"./ico-help-mobile@3x.png\": \"./react-src/graphics/ico-help-mobile@3x.png\",\n\t\"./logo-desktop.png\": \"./react-src/graphics/logo-desktop.png\",\n\t\"./logo-desktop.svg\": \"./react-src/graphics/logo-desktop.svg\",\n\t\"./logo-desktop@2x.png\": \"./react-src/graphics/logo-desktop@2x.png\",\n\t\"./logo-desktop@3x.png\": \"./react-src/graphics/logo-desktop@3x.png\",\n\t\"./logo-mobile.png\": \"./react-src/graphics/logo-mobile.png\",\n\t\"./logo-mobile@2x.png\": \"./react-src/graphics/logo-mobile@2x.png\",\n\t\"./logo-mobile@3x.png\": \"./react-src/graphics/logo-mobile@3x.png\",\n\t\"./radio-selected-desktop.png\": \"./react-src/graphics/radio-selected-desktop.png\",\n\t\"./radio-selected-desktop.svg\": \"./react-src/graphics/radio-selected-desktop.svg\",\n\t\"./radio-selected-desktop@2x.png\": \"./react-src/graphics/radio-selected-desktop@2x.png\",\n\t\"./radio-selected-desktop@3x.png\": \"./react-src/graphics/radio-selected-desktop@3x.png\",\n\t\"./radio-selected-mobile.png\": \"./react-src/graphics/radio-selected-mobile.png\",\n\t\"./radio-selected-mobile.svg\": \"./react-src/graphics/radio-selected-mobile.svg\",\n\t\"./radio-selected-mobile@2x.png\": \"./react-src/graphics/radio-selected-mobile@2x.png\",\n\t\"./radio-selected-mobile@3x.png\": \"./react-src/graphics/radio-selected-mobile@3x.png\",\n\t\"./radio-unselected-desktop.png\": \"./react-src/graphics/radio-unselected-desktop.png\",\n\t\"./radio-unselected-desktop.svg\": \"./react-src/graphics/radio-unselected-desktop.svg\",\n\t\"./radio-unselected-desktop@2x.png\": \"./react-src/graphics/radio-unselected-desktop@2x.png\",\n\t\"./radio-unselected-desktop@3x.png\": \"./react-src/graphics/radio-unselected-desktop@3x.png\",\n\t\"./radio-unselected-mobile.png\": \"./react-src/graphics/radio-unselected-mobile.png\",\n\t\"./radio-unselected-mobile.svg\": \"./react-src/graphics/radio-unselected-mobile.svg\",\n\t\"./radio-unselected-mobile@2x.png\": \"./react-src/graphics/radio-unselected-mobile@2x.png\",\n\t\"./radio-unselected-mobile@3x.png\": \"./react-src/graphics/radio-unselected-mobile@3x.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./react-src/graphics sync .(svg|jpg|png)$\";\n\n//# sourceURL=webpack:///./react-src/graphics_sync_nonrecursive_.(svg%7Cjpg%7Cpng)$?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-desktop.png":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-desktop.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-desktop.svg":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-desktop.svg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-desktop@2x.png":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-desktop@2x.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-desktop@3x.png":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-desktop@3x.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-mobile.png":
+/*!********************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-mobile.png ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-mobile.svg":
+/*!********************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-mobile.svg ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-mobile.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-mobile.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-mobile2@3x.png":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-mobile2@3x.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-mobile2@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-mobile2@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-checked-mobile@2x.png":
+/*!***********************************************************!*\
+  !*** ./react-src/graphics/checkbox-checked-mobile@2x.png ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-checked-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-checked-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-desktop.png":
+/*!***********************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-desktop.png ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-desktop.svg":
+/*!***********************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-desktop.svg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-desktop@2x.png":
+/*!**************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-desktop@2x.png ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-desktop@3x.png":
+/*!**************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-desktop@3x.png ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-desktop.png":
+/*!*****************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-desktop.png ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-desktop.svg":
+/*!*****************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-desktop.svg ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-desktop@2x.png":
+/*!********************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-desktop@2x.png ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-desktop@3x.png":
+/*!********************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-desktop@3x.png ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-mobile.png":
+/*!****************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-mobile.png ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-mobile.svg":
+/*!****************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-mobile.svg ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-mobile.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-mobile.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-mobile@2x.png":
+/*!*******************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-mobile@2x.png ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-error-mobile@3x.png":
+/*!*******************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-error-mobile@3x.png ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-error-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-error-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-mobile.png":
+/*!**********************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-mobile.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-mobile@2x.png":
+/*!*************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-mobile@2x.png ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/checkbox-unchecked-mobile@3x.png":
+/*!*************************************************************!*\
+  !*** ./react-src/graphics/checkbox-unchecked-mobile@3x.png ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/checkbox-unchecked-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/checkbox-unchecked-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-desktop.png":
+/*!*******************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-desktop.png ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-desktop.svg":
+/*!*******************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-desktop.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-desktop@2x.png":
+/*!**********************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-desktop@2x.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-desktop@3x.png":
+/*!**********************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-desktop@3x.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-desktop.png":
+/*!*************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-desktop.png ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-desktop.svg":
+/*!*************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-desktop.svg ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-desktop@2x.png":
+/*!****************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-desktop@2x.png ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-desktop@3x.png":
+/*!****************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-desktop@3x.png ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-mobile.png":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-mobile.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-mobile.svg":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-mobile.svg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-mobile.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-mobile.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-mobile@2x.png":
+/*!***************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-mobile@2x.png ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-error-mobile@3x.png":
+/*!***************************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-error-mobile@3x.png ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-error-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-error-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-mobile.png":
+/*!******************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-mobile.png ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-mobile.svg":
+/*!******************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-mobile.svg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-mobile.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-mobile.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-mobile@2x.png":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-mobile@2x.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/dropdown-arrow-mobile@3x.png":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/dropdown-arrow-mobile@3x.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/dropdown-arrow-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/dropdown-arrow-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-canada-desktop.jpg":
+/*!**************************************************!*\
+  !*** ./react-src/graphics/ic-canada-desktop.jpg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-canada-desktop.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-canada-desktop.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-canada-desktop@2x.jpg":
+/*!*****************************************************!*\
+  !*** ./react-src/graphics/ic-canada-desktop@2x.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-canada-desktop@2x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-canada-desktop@2x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-canada-desktop@3x.jpg":
+/*!*****************************************************!*\
+  !*** ./react-src/graphics/ic-canada-desktop@3x.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-canada-desktop@3x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-canada-desktop@3x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-canada-mobile.jpg":
+/*!*************************************************!*\
+  !*** ./react-src/graphics/ic-canada-mobile.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-canada-mobile.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-canada-mobile.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-canada-mobile@2x.jpg":
+/*!****************************************************!*\
+  !*** ./react-src/graphics/ic-canada-mobile@2x.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-canada-mobile@2x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-canada-mobile@2x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-canada-mobile@3x.jpg":
+/*!****************************************************!*\
+  !*** ./react-src/graphics/ic-canada-mobile@3x.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-canada-mobile@3x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-canada-mobile@3x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-usa-desktop.jpg":
+/*!***********************************************!*\
+  !*** ./react-src/graphics/ic-usa-desktop.jpg ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-usa-desktop.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-usa-desktop.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-usa-desktop@2x.jpg":
+/*!**************************************************!*\
+  !*** ./react-src/graphics/ic-usa-desktop@2x.jpg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-usa-desktop@2x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-usa-desktop@2x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-usa-desktop@3x.jpg":
+/*!**************************************************!*\
+  !*** ./react-src/graphics/ic-usa-desktop@3x.jpg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-usa-desktop@3x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-usa-desktop@3x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-usa-mobile.jpg":
+/*!**********************************************!*\
+  !*** ./react-src/graphics/ic-usa-mobile.jpg ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-usa-mobile.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-usa-mobile.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-usa-mobile@2x.jpg":
+/*!*************************************************!*\
+  !*** ./react-src/graphics/ic-usa-mobile@2x.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-usa-mobile@2x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-usa-mobile@2x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ic-usa-mobile@3x.jpg":
+/*!*************************************************!*\
+  !*** ./react-src/graphics/ic-usa-mobile@3x.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ic-usa-mobile@3x.jpg\";\n\n//# sourceURL=webpack:///./react-src/graphics/ic-usa-mobile@3x.jpg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ico-help-desktop.png":
+/*!*************************************************!*\
+  !*** ./react-src/graphics/ico-help-desktop.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ico-help-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/ico-help-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ico-help-desktop@2x.png":
+/*!****************************************************!*\
+  !*** ./react-src/graphics/ico-help-desktop@2x.png ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ico-help-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/ico-help-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ico-help-desktop@3x.png":
+/*!****************************************************!*\
+  !*** ./react-src/graphics/ico-help-desktop@3x.png ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ico-help-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/ico-help-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ico-help-mobile.png":
+/*!************************************************!*\
+  !*** ./react-src/graphics/ico-help-mobile.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ico-help-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/ico-help-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ico-help-mobile@2x.png":
+/*!***************************************************!*\
+  !*** ./react-src/graphics/ico-help-mobile@2x.png ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ico-help-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/ico-help-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/ico-help-mobile@3x.png":
+/*!***************************************************!*\
+  !*** ./react-src/graphics/ico-help-mobile@3x.png ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/ico-help-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/ico-help-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-desktop.png":
+/*!*********************************************!*\
+  !*** ./react-src/graphics/logo-desktop.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-desktop.svg":
+/*!*********************************************!*\
+  !*** ./react-src/graphics/logo-desktop.svg ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-desktop@2x.png":
+/*!************************************************!*\
+  !*** ./react-src/graphics/logo-desktop@2x.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-desktop@3x.png":
+/*!************************************************!*\
+  !*** ./react-src/graphics/logo-desktop@3x.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-mobile.png":
+/*!********************************************!*\
+  !*** ./react-src/graphics/logo-mobile.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-mobile@2x.png":
+/*!***********************************************!*\
+  !*** ./react-src/graphics/logo-mobile@2x.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/logo-mobile@3x.png":
+/*!***********************************************!*\
+  !*** ./react-src/graphics/logo-mobile@3x.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/logo-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/logo-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-desktop.png":
+/*!*******************************************************!*\
+  !*** ./react-src/graphics/radio-selected-desktop.png ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-desktop.svg":
+/*!*******************************************************!*\
+  !*** ./react-src/graphics/radio-selected-desktop.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-desktop@2x.png":
+/*!**********************************************************!*\
+  !*** ./react-src/graphics/radio-selected-desktop@2x.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-desktop@3x.png":
+/*!**********************************************************!*\
+  !*** ./react-src/graphics/radio-selected-desktop@3x.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-mobile.png":
+/*!******************************************************!*\
+  !*** ./react-src/graphics/radio-selected-mobile.png ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-mobile.svg":
+/*!******************************************************!*\
+  !*** ./react-src/graphics/radio-selected-mobile.svg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-mobile.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-mobile.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-mobile@2x.png":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/radio-selected-mobile@2x.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-selected-mobile@3x.png":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/radio-selected-mobile@3x.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-selected-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-selected-mobile@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-desktop.png":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-desktop.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-desktop.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-desktop.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-desktop.svg":
+/*!*********************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-desktop.svg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-desktop.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-desktop.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-desktop@2x.png":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-desktop@2x.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-desktop@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-desktop@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-desktop@3x.png":
+/*!************************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-desktop@3x.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-desktop@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-desktop@3x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-mobile.png":
+/*!********************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-mobile.png ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-mobile.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-mobile.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-mobile.svg":
+/*!********************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-mobile.svg ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-mobile.svg\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-mobile.svg?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-mobile@2x.png":
+/*!***********************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-mobile@2x.png ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-mobile@2x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-mobile@2x.png?");
+
+/***/ }),
+
+/***/ "./react-src/graphics/radio-unselected-mobile@3x.png":
+/*!***********************************************************!*\
+  !*** ./react-src/graphics/radio-unselected-mobile@3x.png ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"./img/radio-unselected-mobile@3x.png\";\n\n//# sourceURL=webpack:///./react-src/graphics/radio-unselected-mobile@3x.png?");
 
 /***/ }),
 
@@ -4678,7 +5581,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ \"./node_modules/react-toastify/dist/ReactToastify.css\");\n/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _reducers_rootReducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/rootReducer */ \"./react-src/reducers/rootReducer.js\");\n/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/App */ \"./react-src/components/App.js\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.scss */ \"./react-src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_8__);\n\n\n\n\n\n\n\n\n\nvar rootElement = document.getElementById('root');\nvar store = Object(redux__WEBPACK_IMPORTED_MODULE_3__[\"createStore\"])(_reducers_rootReducer__WEBPACK_IMPORTED_MODULE_6__[\"default\"], Object(redux__WEBPACK_IMPORTED_MODULE_3__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_4__[\"default\"]));\nstore.subscribe(function () {\n  return console.log(store.getState());\n});\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__[\"Provider\"], {\n  store: store\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_7__[\"default\"], null)), rootElement);\n\n//# sourceURL=webpack:///./react-src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ \"./node_modules/react-toastify/dist/ReactToastify.css\");\n/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _reducers_rootReducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/rootReducer */ \"./react-src/reducers/rootReducer.js\");\n/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/App */ \"./react-src/components/App.js\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.scss */ \"./react-src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_8__);\n\n\n\n\n\n\n\n\n // import all images/graphics\n\nvar requireImage = __webpack_require__(\"./react-src/graphics sync .(svg|jpg|png)$\");\n\nrequireImage.keys().forEach(function (image) {\n  requireImage(image);\n});\nvar rootElement = document.getElementById('root');\nvar store = Object(redux__WEBPACK_IMPORTED_MODULE_3__[\"createStore\"])(_reducers_rootReducer__WEBPACK_IMPORTED_MODULE_6__[\"default\"], Object(redux__WEBPACK_IMPORTED_MODULE_3__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_4__[\"default\"]));\nstore.subscribe(function () {\n  return console.log(store.getState());\n});\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__[\"Provider\"], {\n  store: store\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_7__[\"default\"], null)), rootElement);\n\n//# sourceURL=webpack:///./react-src/index.js?");
 
 /***/ }),
 

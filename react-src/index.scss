@@ -1,0 +1,95 @@
+html,
+body {
+  margin: 0;
+}
+
+.banner-my-company {
+  text-align: center;
+  padding: 10px;
+}
+
+.banner-register {
+  text-align: center;
+  height: 179px;
+  line-height: 179px;
+  font-size: 60px;
+  font-family: 'Arial';
+  font-weight: bold;
+  background-color: lightblue;
+  color: white;
+  // padding: 90px 0 89px 0;
+}
+
+.center-content {
+  margin: auto;
+  position: absolute;
+  right: 0; left: 0;
+  width: 556px;
+  border: 1px solid #999;
+  padding: 60px 20px 20px 20px;
+}
+
+.birthdate-selector-container {
+  padding-top: 10px;
+}
+
+.birthdate-day-selector-container,
+.birthdate-year-selector-container,
+.birthdate-month-selector-container {
+  display: inline;
+}
+
+.birthdate-day-selector-container,
+.birthdate-year-selector-container,
+.birthdate-month-selector-container {
+  position: relative;
+  // background-color: green;
+}
+
+.birthdate-day-selector,
+.birthdate-year-selector,
+.birthdate-month-selector {
+  opacity: .01;
+  top: 0;
+  position: absolute;
+  width: 164px;
+}
+
+.birthdate-day-selector {
+  margin-left: 184px;
+}
+
+.birthdate-year-selector {
+  margin-left: 368px;
+}
+
+.fake-dropdown-button {
+  top: 0;
+  position: absolute;
+  background-color: #ccc;
+  pointer-events: none;
+  width: 164px;
+}
+
+.fake-dropdown-button-month {
+  @extend .fake-dropdown-button;
+}
+
+.fake-dropdown-button-day {
+  @extend .fake-dropdown-button;
+  left: 184px;
+}
+
+.fake-dropdown-button-year {
+  @extend .fake-dropdown-button;
+  left: 368px;
+}
+
+.fake-dropdown-button-text {
+  display: inline;
+}
+
+.dropdown-arrow {
+  display: inline;
+  margin-left: 4px;
+}
