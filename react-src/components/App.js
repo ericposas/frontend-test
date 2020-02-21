@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import Login from './Login'
 import axios from 'axios'
 
 class App extends Component {
@@ -9,9 +10,7 @@ class App extends Component {
       <>
         <Router>
             <Switch>
-              <Route exact path='/' render={() => (
-                  <div>Now serving React content.</div>
-                )}/>
+              <Route exact path='/' component={Login}/>
             </Switch>
         </Router>
       </>
