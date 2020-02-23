@@ -3,6 +3,20 @@ body {
   margin: 0;
 }
 
+input {
+  height: 35px;
+  width: 516px;
+}
+
+.field-container {
+  margin-top: 20px;
+}
+
+.enter-your-information-text {
+  text-align: center;
+  padding: 60px 0 20px 0;
+}
+
 .banner-my-company {
   text-align: center;
   padding: 10px;
@@ -15,18 +29,19 @@ body {
   font-size: 60px;
   font-family: 'Arial';
   font-weight: bold;
-  background-color: lightblue;
+  background-repeat: no-repeat;
+  background-position: center;
   color: white;
-  // padding: 90px 0 89px 0;
 }
 
 .center-content {
   margin: auto;
-  position: absolute;
+  // position: absolute;
   right: 0; left: 0;
-  width: 556px;
-  border: 1px solid #999;
+  width: 516px;
+  // border: 1px solid #999;
   padding: 60px 20px 20px 20px;
+  background-color: #f7f7f7;
 }
 
 .birthdate-selector-container {
@@ -49,10 +64,11 @@ body {
 .birthdate-day-selector,
 .birthdate-year-selector,
 .birthdate-month-selector {
-  opacity: .01;
   top: 0;
+  opacity: .01;
   position: absolute;
   width: 164px;
+  height: 35px;
 }
 
 .birthdate-day-selector {
@@ -68,7 +84,9 @@ body {
   position: absolute;
   background-color: #ccc;
   pointer-events: none;
+  line-height: 35px;
   width: 164px;
+  height: 35px;
 }
 
 .fake-dropdown-button-month {
@@ -77,19 +95,97 @@ body {
 
 .fake-dropdown-button-day {
   @extend .fake-dropdown-button;
-  left: 184px;
+  left: 180px;
 }
 
 .fake-dropdown-button-year {
   @extend .fake-dropdown-button;
-  left: 368px;
+  left: 360px;
 }
 
 .fake-dropdown-button-text {
   display: inline;
+  margin-left: 10px;
 }
 
 .dropdown-arrow {
   display: inline;
-  margin-left: 4px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 15px;
+  transform: scale(1.5);
+}
+
+.phone-number-field-container {
+  margin-top: 40px;
+}
+
+input[type='radio'] {
+  display: inline-block;
+  width: 16px;
+}
+
+.radio-button-canada {
+  margin-left: 16px;
+}
+
+.radio-button-usa-symbol {
+  display: inline-block;
+  width: 50px;
+}
+
+.radio-button-canada-symbol {
+  display: inline-block;
+  width: 50px;
+}
+
+.yes-accept-terms-container,
+.yes-recieve-news-container {
+  // margin: auto;
+  // padding-top: 30px;
+  text-align: center;
+  position: relative;
+  // background-color: pink;
+  width: 556px;
+  text-align: left;
+  margin-left: calc(50% - 215px);
+}
+
+.yes-recieve-news-container {
+  margin-top: -10px;
+  // z-index: -20;
+}
+
+.yes-accept-terms-checkbox {
+  width: 30px;
+  margin-top: 34px;
+  display: inline-block;
+  // position: absolute;
+}
+
+.yes-recieve-news-checkbox {
+  width: 30px;
+  margin-top: 34px;
+  display: inline-block;
+  // position: absolute;
+}
+
+.yes-accept-terms-text,
+.yes-recieve-news-text {
+  display: inline-block;
+  position: absolute;
+  pointer-events: none;
+  top: 42px;
+}
+
+.register-button {
+  margin: auto;
+  color: #fff;
+  width: 280px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  background-color: #206fcc;
+  margin-top: 40px;
+  margin-bottom: 180px;
 }

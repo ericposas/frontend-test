@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import Login from './Login'
+import Registration from './Registration'
 import axios from 'axios'
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
       <>
         <Router>
             <Switch>
-              <Route exact path='/' component={Login}/>
+              <Route exact path='/' component={Registration}/>
             </Switch>
         </Router>
       </>
