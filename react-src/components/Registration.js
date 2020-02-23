@@ -39,6 +39,27 @@ class Registration extends Component {
     showTooltip: false,
   }
 
+  tooltipRef = React.createRef()
+
+  helpIconRef = React.createRef()
+
+  errorTextRef = React.createRef()
+
+  onWindowResize = () => {
+    this.setState({
+      innerWidth: window.innerWidth
+    })
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onWindowResize)
+    this.onWindowResize()
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowResize)
+  }
+
   handleChange = type => e => {
     this.setState({
       [type]: e.target.value
@@ -57,6 +78,10 @@ class Registration extends Component {
     })
   }
 
+  handleRegisterClickSuccess = () => {
+    alert('Success!')
+  }
+
   handleAcceptTerms = () => {
     this.setState({
       acceptTerms: !this.state.acceptTerms
@@ -64,7 +89,6 @@ class Registration extends Component {
   }
 
   handleToolTip = e => {
-    console.log(e.clientX, e.clientY)
     this.setState({
       showTooltip: !this.state.showTooltip
     })
@@ -85,23 +109,25 @@ class Registration extends Component {
 
     return (
       <>
-        {
-          this.state.showTooltip
-          ?
-            <div className='tooltip'>
-              We'll use this to send you birthday bonus<br/> points.
-            </div>
-          : null
-        }
+        <div
+          ref={this.tooltipRef}
+          className='tooltip'
+          style={{
+            opacity: this.state.showTooltip ? 1 : 0,
+            left: this.helpIconRef.current && this.tooltipRef.current ? `${this.helpIconRef.current.offsetLeft - parseInt(window.getComputedStyle(this.tooltipRef.current).getPropertyValue('width')) }px` : '',
+            top: this.helpIconRef.current && this.tooltipRef.current ? `${this.helpIconRef.current.offsetTop - parseInt(window.getComputedStyle(this.tooltipRef.current).getPropertyValue('height')) - 35}px` : ''
+          }}>
+          We'll use this to send you birthday bonus{ this.state.innerWidth > 768 ? <><br/></> : null } points.
+        </div>
         <div className='banner-my-company'>
-          <img src='./img/logo-desktop.svg' width={182}/>
+          <img src='./img/logo-desktop@3x.png'/>
         </div>
         <div
           className='banner-register'
           style={{ backgroundImage: 'url(./img/gradient-strip.jpg)' }}
           >REGISTER</div>
         <div className='enter-your-information-text'>
-          Enter your information below for exclusive offers, promotions<br/> and savings.
+          Enter your information below for exclusive{ this.state.innerWidth < 768 ? <><br/></> : null } offers, promotions{ this.state.innerWidth > 768 ? <><br/></> : null } and savings.
         </div>
         <div className='center-content'>
           <div className='form-block'>
@@ -169,7 +195,7 @@ class Registration extends Component {
                   </select>
                 </div>
                 <div className='birthdate-year-selector-container field-container'>
-                  <img onClick={this.handleToolTip} src='./img/ico-help-desktop@3x.png' style={{ width: '20px', float: 'right', marginRight: '-4px', marginTop: '-32px', cursor: 'pointer', zIndex: 20 }}/>
+                  <img ref={this.helpIconRef} onClick={this.handleToolTip} src='./img/ico-help-desktop@3x.png' style={{ width: '20px', float: 'right', marginRight: '-4px', marginTop: '-32px', cursor: 'pointer', zIndex: 20 }}/>
                   <div className='fake-dropdown-button-year'>
                     <div className='fake-dropdown-button-text' style={{ color: this.state.selectedYear == null ? '#CCC' : '#565656' }}>{ this.state.selectedYear || 'Year' }</div>
                     <img className='dropdown-arrow' src='./img/dropdown-arrow-desktop.png'/>
@@ -221,20 +247,30 @@ class Registration extends Component {
           <div className='yes-recieve-news-text'>Yes, I'd like to recieve news and special offers</div>
         </div>
         <div className='register-button'>
-          <div onClick={this.handleRegisterClick}>Register</div>
+          {
+            (
+              firstNameValidator || lastNameValidator || emailValidator ||
+              passwordValidator || passwordConfirmValidator || birthdateValidator ||
+              phoneValidator || countryValidator || zipCodeValidator ||
+              !acceptTermsValidator || !this.state.submitAttempt
+            )
+            ? <div onClick={this.handleRegisterClick}>REGISTER</div>
+            : <div onClick={this.handleRegisterClickSuccess}>REGISTER</div>
+          }
         </div>
         <div className='error-block'>
           <div
+            ref={this.errorTextRef}
             style={{
               color: (
                 firstNameValidator || lastNameValidator || emailValidator ||
                 passwordValidator || passwordConfirmValidator || birthdateValidator ||
-                phoneValidator || countryValidator || zipCodeValidator
+                phoneValidator || countryValidator || zipCodeValidator || !acceptTermsValidator
               ) ? 'red' : 'rgba(0,0,0,0)',
               display: (
                 firstNameValidator || lastNameValidator || emailValidator ||
                 passwordValidator || passwordConfirmValidator || birthdateValidator ||
-                phoneValidator || countryValidator || zipCodeValidator
+                phoneValidator || countryValidator || zipCodeValidator || !acceptTermsValidator
               ) ? 'block' : 'none'
             }}
             className='error-text'>The following errors have occurred:</div>
@@ -319,6 +355,11 @@ class Registration extends Component {
             - You need to accept the terms & conditions and privacy policy
           </div>
         </div>
+        {
+          this.errorTextRef.current && window.getComputedStyle(this.errorTextRef.current).getPropertyValue('color') != 'red'
+          ? <div style={{ paddingBottom: '150px' }}></div>
+          : null
+        }
       </>
     )
   }

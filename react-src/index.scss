@@ -13,6 +13,11 @@ input {
   font-size: 14px;
 }
 
+input[type='radio'] {
+  display: inline-block;
+  width: 16px;
+}
+
 .error-block {
   width: 480px;
   margin: auto;
@@ -44,18 +49,19 @@ input {
   margin-top: 10px;
 }
 
-// .phone-number-field-container {
-//   margin-top: 40px !important;
-// }
-
 .enter-your-information-text {
   text-align: center;
   padding: 60px 0 20px 0;
 }
 
 .banner-my-company {
+  margin: auto;
   text-align: center;
   padding: 10px;
+}
+
+.banner-my-company > img {
+  width: 182px;
 }
 
 .banner-register {
@@ -157,11 +163,6 @@ input {
   margin-top: 4px;
 }
 
-input[type='radio'] {
-  display: inline-block;
-  width: 16px;
-}
-
 .radio-button-canada {
   margin-left: 16px;
 }
@@ -225,11 +226,64 @@ input[type='radio'] {
 }
 
 .tooltip {
-  top: 835px;
-  left: 440px;
   background-color: #206fcc;
   position: absolute;
   padding: 10px;
-  color: #fff;
   border-radius: 3px;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  input {
+    width: 260px;
+  }
+  .banner-my-company > img {
+    width: 140px;
+    margin: auto;
+  }
+  .banner-register {
+    font-size: 30px;
+    height: 140px;
+    line-height: 140px;
+  }
+  .center-content {
+    max-width: 260px;
+  }
+  .birthdate-day-selector,
+  .birthdate-month-selector,
+  .birthdate-year-selector,
+  .fake-dropdown-button {
+    width: 80px;
+  }
+  .fake-dropdown-button-day {
+    left: 90px;
+  }
+  .birthdate-day-selector {
+    margin-left: 90px;
+  }
+  .birthdate-year-selector {
+    margin-left: 180px;
+  }
+  .fake-dropdown-button-year {
+    left: 180px;
+  }
+  .tooltip {
+    width: 243px;
+  }
+  .error-block {
+    width: 260px;
+  }
+  .yes-accept-terms-container,
+  .yes-recieve-news-container {
+    width: 270px;
+    margin: auto;
+  }
+  .enter-your-information-text {
+    padding: 30px 0 30px 0;
+  }
+
 }
