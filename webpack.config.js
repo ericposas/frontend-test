@@ -37,6 +37,18 @@ module.exports = () => {
           }
         },
         {
+          type: 'javascript/auto',
+          test: /\.json$/,
+          exclude: /(node_modules|bower_components)/,
+            use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'json'
+            },
+          }],
+        },
+        {
           test: /\.(css|scss)$/,
           use: [
             'style-loader',
