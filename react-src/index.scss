@@ -1,16 +1,52 @@
 html,
 body {
   margin: 0;
+  font-family: 'Arial';
+  color: #565656;
+  font-size: 14px;
 }
 
 input {
   height: 35px;
   width: 516px;
+  border: none;
+  font-size: 14px;
+}
+
+.error-block {
+  width: 480px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.error-text {
+  color: red;
+}
+
+::placeholder {
+  color: #CCC;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #CCC;
+}
+
+::-ms-input-placeholder {
+  color: #CCC;
 }
 
 .field-container {
   margin-top: 20px;
 }
+
+.field-container > div :not(.birthdate-year-selector-container) {
+  margin-top: 10px;
+}
+
+// .phone-number-field-container {
+//   margin-top: 40px !important;
+// }
 
 .enter-your-information-text {
   text-align: center;
@@ -36,16 +72,14 @@ input {
 
 .center-content {
   margin: auto;
-  // position: absolute;
   right: 0; left: 0;
   width: 516px;
-  // border: 1px solid #999;
   padding: 60px 20px 20px 20px;
   background-color: #f7f7f7;
 }
 
 .birthdate-selector-container {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .birthdate-day-selector-container,
@@ -58,7 +92,6 @@ input {
 .birthdate-year-selector-container,
 .birthdate-month-selector-container {
   position: relative;
-  // background-color: green;
 }
 
 .birthdate-day-selector,
@@ -82,7 +115,7 @@ input {
 .fake-dropdown-button {
   top: 0;
   position: absolute;
-  background-color: #ccc;
+  background-color: #fff;
   pointer-events: none;
   line-height: 35px;
   width: 164px;
@@ -120,6 +153,10 @@ input {
   margin-top: 40px;
 }
 
+.phone-number-input-div {
+  margin-top: 4px;
+}
+
 input[type='radio'] {
   display: inline-block;
   width: 16px;
@@ -131,21 +168,20 @@ input[type='radio'] {
 
 .radio-button-usa-symbol {
   display: inline-block;
+  margin-left: 6px;
   width: 50px;
 }
 
 .radio-button-canada-symbol {
   display: inline-block;
+  margin-left: 6px;
   width: 50px;
 }
 
 .yes-accept-terms-container,
 .yes-recieve-news-container {
-  // margin: auto;
-  // padding-top: 30px;
   text-align: center;
   position: relative;
-  // background-color: pink;
   width: 556px;
   text-align: left;
   margin-left: calc(50% - 215px);
@@ -153,21 +189,18 @@ input[type='radio'] {
 
 .yes-recieve-news-container {
   margin-top: -10px;
-  // z-index: -20;
 }
 
 .yes-accept-terms-checkbox {
   width: 30px;
   margin-top: 34px;
   display: inline-block;
-  // position: absolute;
 }
 
 .yes-recieve-news-checkbox {
   width: 30px;
   margin-top: 34px;
   display: inline-block;
-  // position: absolute;
 }
 
 .yes-accept-terms-text,
@@ -187,5 +220,16 @@ input[type='radio'] {
   line-height: 35px;
   background-color: #206fcc;
   margin-top: 40px;
-  margin-bottom: 180px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.tooltip {
+  top: 835px;
+  left: 440px;
+  background-color: #206fcc;
+  position: absolute;
+  padding: 10px;
+  color: #fff;
+  border-radius: 3px;
 }
