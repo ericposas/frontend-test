@@ -9,24 +9,24 @@ const actions = {
     password, birthdate, phone,
     country, zip
   }) => {
-    return (getState, dispatch) => {
+    return (dispatch, getState) => {
       axios.post('/register', { firstName, lastName, email, password, birthdate, phone, country, zip })
         .then(data => {
-          console.log(data.data)
           if (data.data.success) {
-            // dispatch({  })
+            console.log(data.data.success)
+            dispatch({ type: constants.USER_REGISTERED })
           }
         })
         .catch(err => console.log(err))
     }
   },
   handleLogin: ({ email, password }) => {
-    return (getState, dispatch) => {
+    return (dispatch, getState) => {
       axios.post('/login', { email, password })
         .then(data => {
-          console.log(data.data)
           if (data.data.success) {
-            // ...
+            console.log(data.data.success)
+            dispatch({ type: constants.USER_LOGGED_IN })
           }
         })
     }
