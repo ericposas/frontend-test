@@ -5,7 +5,23 @@ import { mapState, mapDispatch } from '../mapStateDispatch'
 
 class Login extends Component {
 
+  state = {
+    emailValue: '',
+    passwordValue: ''
+  }
+
   loginContainerInnerRef = React.createRef()
+
+  componentDidMount() {
+    this.props.onWindowResize({ innerWidth: window.innerWidth, innerHeight: window.innerHeight })
+  }
+
+  handleLoginSubmit = () => {
+    this.props.handleLogin({
+      email: this.state.emailValue,
+      password: this.state.passwordValue
+    })
+  }
 
   render() {
     return (
@@ -27,13 +43,18 @@ class Login extends Component {
             >
               <div className='padding-10'>
                 <TextField
+                  onChange={e => this.setState({ emailValue: e.target.value })}
+                  value={this.state.emailValue}
                   style={{ width: '100%' }}
-                  label='username'
+                  label='email'
                   variant='outlined'
                 />
               </div>
               <div className='padding-10'>
                 <TextField
+                  onChange={e => this.setState({ passwordValue: e.target.value })}
+                  type='password'
+                  value={this.state.passwordValue}
                   style={{ width: '100%' }}
                   label='password'
                   variant='outlined'
@@ -41,13 +62,14 @@ class Login extends Component {
               </div>
               <div className='padding-10' style={{ position: 'relative' }}>
                 <Button
+                  onClick={this.handleLoginSubmit}
                   style={{ margin: 'auto', position: 'absolute', left: 0, right: 0 }}
                   variant='contained'
                   color='default'>
                   Submit
                 </Button>
               </div>
-              <div className='padding-10'></div>
+              <div className='padding-5'></div>
             </div>
           </div>
         </div>

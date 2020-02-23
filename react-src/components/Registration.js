@@ -64,9 +64,18 @@ class Registration extends Component {
       submitAttempt: true
     })
   }
-
-  handleRegisterClickSuccess = () => {
-    alert('Success!')
+  
+  handleRegisterSubmit = () => {
+    this.props.registerUser({
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      birthdate: new Date(this.state.selectedYear, months.indexOf(this.state.selectedMonth), this.state.selectedDay),
+      phone: this.state.phoneNumber,
+      country: this.state.selectedCountry,
+      zip: this.state.zipCode
+    })
   }
 
   handleAcceptTerms = () => {
@@ -242,7 +251,7 @@ class Registration extends Component {
               !acceptTermsValidator || !this.state.submitAttempt
             )
             ? <div onClick={this.handleRegisterClick}>REGISTER</div>
-            : <div onClick={this.handleRegisterClickSuccess}>REGISTER</div>
+            : <div onClick={this.handleRegisterSubmit}>REGISTER</div>
           }
         </div>
         <div className='error-block'>

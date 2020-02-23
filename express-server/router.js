@@ -5,5 +5,7 @@ const router = Router()
 
 router
   .get('/', controller.home)
+  .post('/register', controller.register)
+  .post('/login', controller.login)
 
 export default router
