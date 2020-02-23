@@ -268,7 +268,7 @@ class Registration extends Component {
               display: passwordValidator ? 'block' : 'none'
             }}
             className='error-text'>
-            - Invalid Password
+            - Invalid Password - password must have at least 8 chars, <br/>uppercase letters, lowercase letters, and digits
           </div>
           <div
             style={{
