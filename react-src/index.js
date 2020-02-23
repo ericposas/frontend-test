@@ -6,7 +6,8 @@ import thunk from 'redux-thunk'
 import 'react-toastify/dist/ReactToastify.css'
 import rootReducer from './reducers/rootReducer'
 import App from './components/App'
-import './index.scss'
+import './register.scss'
+import './login.scss'
 // import all images/graphics
 const requireImage = require.context('./graphics', false, /.(svg|jpg|png)$/)
 requireImage.keys().forEach(image => {

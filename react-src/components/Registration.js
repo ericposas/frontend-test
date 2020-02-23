@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import monthDays from 'month-days'
 import { validate } from 'email-validator'
 import passwordValidation from 'password-validator'
+import { mapState, mapDispatch } from '../mapStateDispatch'
 import phone from 'phone'
 import axios from 'axios'
 
@@ -44,21 +46,6 @@ class Registration extends Component {
   helpIconRef = React.createRef()
 
   errorTextRef = React.createRef()
-
-  onWindowResize = () => {
-    this.setState({
-      innerWidth: window.innerWidth
-    })
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.onWindowResize)
-    this.onWindowResize()
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize)
-  }
 
   handleChange = type => e => {
     this.setState({
@@ -117,7 +104,7 @@ class Registration extends Component {
             left: this.helpIconRef.current && this.tooltipRef.current ? `${this.helpIconRef.current.offsetLeft - parseInt(window.getComputedStyle(this.tooltipRef.current).getPropertyValue('width')) }px` : '',
             top: this.helpIconRef.current && this.tooltipRef.current ? `${this.helpIconRef.current.offsetTop - parseInt(window.getComputedStyle(this.tooltipRef.current).getPropertyValue('height')) - 35}px` : ''
           }}>
-          We'll use this to send you birthday bonus{ this.state.innerWidth > 768 ? <><br/></> : null } points.
+          We'll use this to send you birthday bonus{ this.props.windowDimensions.innerWidth > 768 ? <><br/></> : null } points.
         </div>
         <div className='banner-my-company'>
           <img src='./img/logo-desktop@3x.png'/>
@@ -127,7 +114,7 @@ class Registration extends Component {
           style={{ backgroundImage: 'url(./img/gradient-strip.jpg)' }}
           >REGISTER</div>
         <div className='enter-your-information-text'>
-          Enter your information below for exclusive{ this.state.innerWidth < 768 ? <><br/></> : null } offers, promotions{ this.state.innerWidth > 768 ? <><br/></> : null } and savings.
+          Enter your information below for exclusive{ this.props.windowDimensions.innerWidth < 768 ? <><br/></> : null } offers, promotions{ this.props.windowDimensions.innerWidth > 768 ? <><br/></> : null } and savings.
         </div>
         <div className='center-content'>
           <div className='form-block'>
@@ -366,4 +353,4 @@ class Registration extends Component {
 
 }
 
-export default Registration
+export default connect(mapState, mapDispatch)(Registration)
