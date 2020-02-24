@@ -51,13 +51,14 @@ const actions = {
     firstName, lastName, email,
     password, birthdate, phone,
     country, zip
-  }) => {
+  }, callback) => {
     return (dispatch, getState) => {
       axios.post('/register', { firstName, lastName, email, password, birthdate, phone, country, zip })
         .then(data => {
           if (data.data.success) {
             let user = data.data.success
             dispatch({ type: constants.USER_REGISTERED })
+            if (callback) callback()
           } else {
             console.log(data.data.error)
           }
