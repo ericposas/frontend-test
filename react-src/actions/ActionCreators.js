@@ -13,7 +13,7 @@ const actions = {
       axios.post('/register', { firstName, lastName, email, password, birthdate, phone, country, zip })
         .then(data => {
           if (data.data.success) {
-            console.log(data.data.success)
+            let user = data.data.success
             dispatch({ type: constants.USER_REGISTERED })
           }
         })
@@ -25,8 +25,9 @@ const actions = {
       axios.post('/login', { email, password })
         .then(data => {
           if (data.data.success) {
-            console.log(data.data.success)
+            let user = data.data.success
             dispatch({ type: constants.USER_LOGGED_IN })
+            dispatch({ type: constants.SET_USER_DATA, payload: user })
           }
         })
     }

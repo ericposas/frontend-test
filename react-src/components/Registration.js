@@ -59,23 +59,40 @@ class Registration extends Component {
     })
   }
 
-  handleRegisterClick = () => {
-    this.setState({
-      submitAttempt: true
-    })
-  }
-  
+  // handleRegisterClick = () => {
+  //   this.setState({
+  //     submitAttempt: true
+  //   })
+  // }
+
   handleRegisterSubmit = () => {
-    this.props.registerUser({
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      email: this.state.email,
-      password: this.state.password,
-      birthdate: new Date(this.state.selectedYear, months.indexOf(this.state.selectedMonth), this.state.selectedDay),
-      phone: this.state.phoneNumber,
-      country: this.state.selectedCountry,
-      zip: this.state.zipCode
-    })
+    if (
+      (this.state.firstName == '' || !isNaN(this.state.firstName)) ||
+      (this.state.lastName == '' || !isNaN(this.state.lastName)) ||
+      (!validate(this.state.email)) ||
+      (!passwordSchema.validate(this.state.password)) ||
+      (!(this.state.passwordConfirm == this.state.password) || this.state.passwordConfirm == '') ||
+      (!this.state.selectedMonth || !this.state.selectedDay || !this.state.selectedYear) ||
+      (this.state.phoneNumber == '' || phone(this.state.phoneNumber).length == 0) ||
+      (this.state.selectedCountry == null) ||
+      (this.state.zipCode == '' || this.state.zipCode.length < 5) ||
+      (!this.state.acceptTerms)
+    ) {
+      console.log('failed attempt')
+      this.setState({ submitAttempt: true })
+    } else {
+      console.log('submitting data')
+      this.props.registerUser({
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        password: this.state.password,
+        birthdate: new Date(this.state.selectedYear, months.indexOf(this.state.selectedMonth), this.state.selectedDay),
+        phone: this.state.phoneNumber,
+        country: this.state.selectedCountry,
+        zip: this.state.zipCode
+      })
+    }
   }
 
   handleAcceptTerms = () => {
@@ -243,16 +260,7 @@ class Registration extends Component {
           <div className='yes-recieve-news-text'>Yes, I'd like to recieve news and special offers</div>
         </div>
         <div className='register-button'>
-          {
-            (
-              firstNameValidator || lastNameValidator || emailValidator ||
-              passwordValidator || passwordConfirmValidator || birthdateValidator ||
-              phoneValidator || countryValidator || zipCodeValidator ||
-              !acceptTermsValidator || !this.state.submitAttempt
-            )
-            ? <div onClick={this.handleRegisterClick}>REGISTER</div>
-            : <div onClick={this.handleRegisterSubmit}>REGISTER</div>
-          }
+          <div onClick={this.handleRegisterSubmit}>REGISTER</div>
         </div>
         <div className='error-block'>
           <div

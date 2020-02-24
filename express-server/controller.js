@@ -36,12 +36,11 @@ const controller = {
   },
   login: (req, res) => {
     if (req.body.email && req.body.password) {
-      console.log(req.body)
       User.findOne({ email: req.body.email })
         .then(doc => {
           if (doc) {
             bcrypt.compare(req.body.password, doc.password, (err, result) => {
-              console.log(err, result)
+              if (err) res.send({ error: 'error occurred saving User' })
               if (result == true) {
                 req.session.auth = true
                 req.session.user = Object.assign({}, doc._doc)
@@ -58,7 +57,6 @@ const controller = {
           } else {
             res.send({ error: 'could not find user by that email address' })
           }
-
         })
         .catch(err => res.send({ error: 'error logging in' }))
     } else {
