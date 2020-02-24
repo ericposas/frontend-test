@@ -8,6 +8,9 @@ const userState = (state = null, action) => {
     case constants.USER_REGISTERED:
       return constants.USER_REGISTERED
       break
+    case constants.USER_LOGGED_OUT:
+      return constants.USER_LOGGED_OUT
+      break
     default:
       return state
   }

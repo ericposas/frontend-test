@@ -7,5 +7,7 @@ router
   .get('/', controller.home)
   .post('/register', controller.register)
   .post('/login', controller.login)
+  .post('/sessionCheck', controller.sessionCheck)
+  .post('/logout', controller.logout)
 
 export default router

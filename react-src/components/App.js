@@ -3,9 +3,9 @@ import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-rou
 import { connect } from 'react-redux'
 import { mapState, mapDispatch } from '../mapStateDispatch'
 import Registration from './Registration'
+import ProductPage from './ProductPage'
 import Login from './Login'
 import Home from './Home'
-// import ProductPage from './ProductPage'
 import axios from 'axios'
 
 class App extends Component {
@@ -31,8 +31,7 @@ class App extends Component {
               <Route exact path='/' component={Home}/>
               <Route path='/login' component={Login}/>
               <Route path='/register' component={Registration}/>
-              {/*<Route path='/products' component={ProductPage}/>*/}
-
+              <Route path='/products' component={ProductPage}/>
             </Switch>
         </Router>
       </>

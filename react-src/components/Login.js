@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { TextField, Button } from '@material-ui/core'
 import { mapState, mapDispatch } from '../mapStateDispatch'
 
@@ -17,15 +18,21 @@ class Login extends Component {
   }
 
   handleLoginSubmit = () => {
-    this.props.handleLogin({
-      email: this.state.emailValue,
-      password: this.state.passwordValue
-    })
+    this.props.handleLogin(
+      {
+        email: this.state.emailValue,
+        password: this.state.passwordValue
+      },
+      () => this.props.history.push('/products')
+    )
   }
 
   render() {
     return (
       <>
+        <h1>
+          Login to see our Product List
+        </h1>
         <div
           className='login-container-outer'
           style={{
@@ -79,4 +86,4 @@ class Login extends Component {
 
 }
 
-export default connect(mapState, mapDispatch)(Login)
+export default connect(mapState, mapDispatch)(withRouter(Login))

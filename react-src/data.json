@@ -1,0 +1,8 @@
+[
+  { "name": "Raspberry Pie", "price": "$10.00", "image": "./img/raspberrypie.jpg", "description": "Pie filled with fresh raspberries" },
+  { "name": "Grilled Cheese", "price": "$12.00", "image": "./img/grilledcheese.jpg", "description": "Butter-grilled sandwich filled with melted cheese" },
+  { "name": "Rotisserie Chicken", "price": "$14.00", "image": "./img/rotisserie.jpg", "description": "Whole chicken, baked rotisserie style" },
+  { "name": "Porterhouse", "price": "$26.00", "image": "./img/porterhouse.jpg", "description": "One of the finest cuts of steak, cooked to perfection" },
+  { "name": "Pork Ribs", "price": "$16.00", "image": "./img/porkribs.jpg", "description": "BBQ Pork ribs, slow cooked for 8 hours" },
+  { "name": "Lava Cake", "price": "$10.00", "image": "./img/lavacake.jpg", "description": "Chocolate cake with molten chocolate filling" }
+]

@@ -4,6 +4,21 @@ import uuid from 'uuid'
 
 const controller = {
   home: (req, res) => res.send('Home.'),
+  logout: (req, res) => {
+    if (req.session) {
+      req.session.destroy()
+      res.send({ success: 'user has logged out' })
+    } else {
+      res.send({ error: 'something went wrong' })
+    }
+  },
+  sessionCheck: (req, res) => {
+    if (req.session && req.session.auth) {
+      res.send({ success: req.session.user })
+    } else {
+      res.send({ error: 'user is not logged in' })
+    }
+  },
   register: (req, res) => {
     if (
       req.body.firstName && req.body.lastName && req.body.email &&

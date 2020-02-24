@@ -6,13 +6,15 @@ import thunk from 'redux-thunk'
 import 'react-toastify/dist/ReactToastify.css'
 import rootReducer from './reducers/rootReducer'
 import App from './components/App'
-import './register.scss'
-import './login.scss'
+import './scss/register.scss'
+import './scss/login.scss'
+import './scss/products.scss'
+import './data.json'
 // import all images/graphics
-const requireImage = require.context('./graphics', false, /.(svg|jpg|png)$/)
-requireImage.keys().forEach(image => {
-  requireImage(image)
-})
+const requireGraphics = require.context('./graphics', false, /.(svg|jpg|png)$/)
+const requireImage = require.context('./images', false, /.(svg|jpg|png)$/)
+requireGraphics.keys().forEach(image => requireGraphics(image))
+requireImage.keys().forEach(image => requireImage(image))
 
 const rootElement = document.getElementById('root')
 const store = createStore(rootReducer, applyMiddleware(thunk))

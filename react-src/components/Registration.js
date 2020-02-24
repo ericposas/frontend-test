@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import monthDays from 'month-days'
 import { validate } from 'email-validator'
@@ -17,9 +18,9 @@ passwordSchema
   .has().not().spaces()
   .is().not().oneOf(['Passw0rd', 'Password123'])
 const months = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May',
-  'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
-  'Nov', 'Dec'
+  'Jan', 'Feb', 'Mar', 'Apr',
+  'May', 'Jun', 'Jul', 'Aug',
+  'Sep', 'Oct', 'Nov', 'Dec'
 ]
 
 class Registration extends Component {
@@ -59,12 +60,6 @@ class Registration extends Component {
     })
   }
 
-  // handleRegisterClick = () => {
-  //   this.setState({
-  //     submitAttempt: true
-  //   })
-  // }
-
   handleRegisterSubmit = () => {
     if (
       (this.state.firstName == '' || !isNaN(this.state.firstName)) ||
@@ -82,16 +77,19 @@ class Registration extends Component {
       this.setState({ submitAttempt: true })
     } else {
       console.log('submitting data')
-      this.props.registerUser({
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        password: this.state.password,
-        birthdate: new Date(this.state.selectedYear, months.indexOf(this.state.selectedMonth), this.state.selectedDay),
-        phone: this.state.phoneNumber,
-        country: this.state.selectedCountry,
-        zip: this.state.zipCode
-      })
+      this.props.registerUser(
+        {
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          email: this.state.email,
+          password: this.state.password,
+          birthdate: new Date(this.state.selectedYear, months.indexOf(this.state.selectedMonth), this.state.selectedDay),
+          phone: this.state.phoneNumber,
+          country: this.state.selectedCountry,
+          zip: this.state.zipCode
+        },
+        () => this.props.history.push('/login')
+      )
     }
   }
 
@@ -370,4 +368,4 @@ class Registration extends Component {
 
 }
 
-export default connect(mapState, mapDispatch)(Registration)
+export default connect(mapState, mapDispatch)(withRouter(Registration))
